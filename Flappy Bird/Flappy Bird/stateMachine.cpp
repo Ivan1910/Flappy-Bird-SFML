@@ -17,10 +17,10 @@ namespace fp {
 			if(!this->states.empty()){
 				if (!this->isChanging) {
 					this->states.top()->pause();
-			}
+						}
 				else {
 					this->states.pop();
-				}
+					}
 			}
 		}
 		this->states.push(std::move(this->newState));
