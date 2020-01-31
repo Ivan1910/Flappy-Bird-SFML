@@ -3,15 +3,15 @@
 #include<stack>
 #include<memory>
 
-#include "states.h"
+#include "states.hpp"
 
 namespace fp {
 	typedef std::unique_ptr<state> sRef;
 
 	class stateMachine {
 	public:
-		stateMachine();
-		~stateMachine();
+		stateMachine() {}
+		~stateMachine(){}
 		void stateToStack(sRef newState, bool isChanging = true);
 		void stateDelete();
 		void stateChanges();

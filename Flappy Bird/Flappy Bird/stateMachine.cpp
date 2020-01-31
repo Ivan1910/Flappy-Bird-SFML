@@ -1,4 +1,4 @@
-#include "stateMachine.h"
+#include "stateMachine.hpp"
 
 namespace fp {
 

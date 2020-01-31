@@ -21,12 +21,18 @@
     <ClCompile Include="stateMachine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="inputManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stateMachine.h">
+    <ClInclude Include="stateMachine.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="states.h">
+    <ClInclude Include="states.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inputManager.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
