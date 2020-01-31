@@ -22,11 +22,13 @@
     <ClCompile Include="assetManager.cpp" />
     <ClCompile Include="inputManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainLoop.cpp" />
     <ClCompile Include="stateMachine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="assetManager.hpp" />
     <ClInclude Include="inputManager.hpp" />
+    <ClInclude Include="mainLoop.hpp" />
     <ClInclude Include="stateMachine.hpp" />
     <ClInclude Include="states.hpp" />
   </ItemGroup>
