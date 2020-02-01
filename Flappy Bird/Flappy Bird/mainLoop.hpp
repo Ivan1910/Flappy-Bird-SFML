@@ -21,7 +21,7 @@ namespace fp {
 	public:
 		game(int heigh, int width, std::string name);
 	private:
-		const float time = 1.0f / 60.0f;
+		const float deltaT = 1.0f / 60.0f;
 		sf::Clock clk;
 		dataRef d = std::make_shared<data>();
 		void run();

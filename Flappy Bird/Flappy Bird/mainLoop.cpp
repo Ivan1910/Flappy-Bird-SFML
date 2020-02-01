@@ -15,19 +15,19 @@ namespace fp {
 		while (this->d->wnd.isOpen()) {
 			this->d->sM.stateChanges();
 			nTime = this->clk.getElapsedTime().asSeconds();
-			fTime = nTime;
+			fTime = nTime - currTime;                       //duration between frames
 
 			if (0.25f < fTime) {
-				fTime = 0.25;
+				fTime = 0.25f;
 			}
 			currTime = nTime;
 			acc += fTime;
-			while (time <= acc) {
+			while (deltaT <= acc) {                            //framerate independent motion
 				this->d->sM.currentState()->inputHandler();
-				this->d->sM.currentState()->update(time);
-				acc -= time;
+				this->d->sM.currentState()->update(deltaT);
+				acc -= deltaT;
 			}
-			intPol = acc / time;
+			intPol = acc / deltaT;
 			this->d->sM.currentState()->draw(intPol);
 		}
 	}
