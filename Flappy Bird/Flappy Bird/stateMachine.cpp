@@ -15,26 +15,25 @@ namespace fp {
 		}
 		if (this->isAdding) {
 			if(!this->states.empty()){
-				if (!this->isChanging) {
-					this->states.top()->pause();
+				if (this->isChanging) {
+					this->states.pop();
 						}
 				else {
-					this->states.pop();
+					this->states.top()->pause();
 					}
 			}
+		
+			this->states.push(std::move(this->newState));
+			this->states.top()->init();
+			this->isAdding = false;
 		}
-		this->states.push(std::move(this->newState));
-		this->states.top()->init();
-		this->isAdding = false;
 	}
 	void stateMachine::stateDelete(){
-		this->isChanging = true;
+		this->isDeleting = true;
 	}
 	void stateMachine::stateToStack(sRef newState, bool isChanging) {
 		this->isChanging = isChanging;
 		this->isAdding = true;
 		this->newState = std::move(newState);
 	}
-
-
 }

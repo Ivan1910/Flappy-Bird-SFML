@@ -1,10 +1,8 @@
 #include <iostream>
 #include "mainLoop.hpp"
-#define Width 800
-#define Height 600
-#define Name "Flappy Bird"
+#include "def.hpp"
 
 int main() {
-	fp::game(Width,Height,Name);
+	fp::game(SCREEN_WIDTH,SCREEN_HEIGHT,"Flappy bird");
 	return EXIT_SUCCESS;
 }
