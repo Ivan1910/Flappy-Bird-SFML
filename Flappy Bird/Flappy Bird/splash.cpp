@@ -24,7 +24,7 @@ namespace fp {
 
 	void splash::update(float time) {
 		if (clk.getElapsedTime().asSeconds() > SPLASH_TIME) {
-			std::cout << "Main menu" << std::endl;
+			//call main menu state
 		}
 	}
 	void splash::draw(float time) {
