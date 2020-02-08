@@ -9,6 +9,6 @@ namespace fp {
 		~inputManager(){}
 
 		sf::Vector2i mousePosition(sf::RenderWindow &wnd);
-		bool spriteClicked(sf::Sprite sprObj, sf::Mouse::Button btn, sf::RenderWindow &wnd);
+		bool spriteClicked(const sf::Sprite &sprObj,const sf::Mouse::Button &btn,const sf::RenderWindow &wnd);
 					};
 	}
