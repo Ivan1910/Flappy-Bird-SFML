@@ -1,7 +1,7 @@
 #pragma once
 
-#define SCREEN_WIDTH 768
-#define SCREEN_HEIGHT 680
+#define SCREEN_WIDTH 450
+#define SCREEN_HEIGHT 600
 
 #define SPLASH_TIME 2.0
 

@@ -15,7 +15,7 @@ namespace fp {
 		title.setTexture(this->dR->aM.getTexture("title"));
 		playBtn.setTexture(this->dR->aM.getTexture("play button"));
 		bkgnd.setTexture(this->dR->aM.getTexture("menu background"));
-		playBtn.setPosition((SCREEN_WIDTH / 2) - playBtn.getGlobalBounds().width / 2, (SCREEN_WIDTH / 2) - playBtn.getGlobalBounds().height / 2);
+		playBtn.setPosition((SCREEN_WIDTH / 2) - playBtn.getGlobalBounds().width / 2, (SCREEN_HEIGHT / 2) - playBtn.getGlobalBounds().height / 2);
 		title.setPosition((SCREEN_WIDTH/2)-title.getGlobalBounds().width/2,title.getGlobalBounds().height/2);
 	}
 
@@ -26,7 +26,7 @@ namespace fp {
 				dR->wnd.close();
 			}
 			if (dR->iM.spriteClicked(playBtn, sf::Mouse::Left, dR->wnd)) {
-				std::cout << "click"; //call game state
+				std::cout << "click" << std::endl; //call game state
 			}
 		}
 	}
