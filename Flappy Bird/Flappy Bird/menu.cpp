@@ -1,5 +1,6 @@
 #include "menu.hpp"
 #include "def.hpp"
+#include "game.hpp"
 #include <sstream>
 #include <iostream>
 
@@ -26,7 +27,7 @@ namespace fp {
 				dR->wnd.close();
 			}
 			if (dR->iM.spriteClicked(playBtn, sf::Mouse::Left, dR->wnd)) {
-				std::cout << "click" << std::endl; //call game state
+				dR->sM.stateToStack(sRef(new gameScreen(dR)), true);
 			}
 		}
 	}

@@ -9,3 +9,4 @@
 #define PLAYBTN_PATH "../Resources/play.png"
 #define MENU_BACKGROUND_PATH "../Resources/bkgnd.png"
 #define SPLASH_PATH "../Resources/Splash.png"
+#define GAME_BACKGROUND_PATH "../Resources/bkgnd.png"
