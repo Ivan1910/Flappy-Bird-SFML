@@ -4,7 +4,8 @@
 #include <iterator>
 namespace fp {
 	pipe::pipe(dataRef d) : dR(d){
-		landHeight = dR->aM.getTexture("ground").getSize().y;
+		groundHeight = dR->aM.getTexture("ground").getSize().y;
+		pipeYOffset = 0;
 	}
 	void pipe::drawP() {
 		for(auto const& spr : pipesSpr) {
@@ -13,12 +14,12 @@ namespace fp {
 	}
 	void pipe::spawnDw() {
 		sf::Sprite dwSpr(dR->aM.getTexture("pipe dw"));
-		dwSpr.setPosition(dR->wnd.getSize().x, dR->wnd.getSize().y - dwSpr.getGlobalBounds().height);
+		dwSpr.setPosition(dR->wnd.getSize().x, dR->wnd.getSize().y - dwSpr.getGlobalBounds().height-pipeYOffset);
 		pipesSpr.push_back(dwSpr);
 	}
 	void pipe::spawnUp(){
 		sf::Sprite upSpr(dR->aM.getTexture("pipe up"));
-		upSpr.setPosition(dR->wnd.getSize().x, 0);
+		upSpr.setPosition(dR->wnd.getSize().x, -pipeYOffset);
 		pipesSpr.push_back(upSpr);
 	}
 	void pipe::spawnScorePipe(){
@@ -37,5 +38,9 @@ namespace fp {
 				spr.move(-m, 0);
 			}
 				}
+	}
+
+	void pipe::randPipe() {
+		pipeYOffset = rand() % (groundHeight + 1);
 	}
 }

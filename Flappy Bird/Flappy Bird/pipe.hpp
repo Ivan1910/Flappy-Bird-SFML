@@ -17,7 +17,7 @@ namespace fp{
 	private:
 		dataRef dR;
 		std::vector<sf::Sprite> pipesSpr;
-		int landHeight;
+		int groundHeight;
 		int pipeYOffset;
 	};
 
