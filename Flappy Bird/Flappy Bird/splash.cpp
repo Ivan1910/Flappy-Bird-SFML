@@ -1,5 +1,6 @@
 #include "splash.hpp"
 #include "def.hpp"
+#include "menu.hpp"
 #include <sstream>
 #include <iostream>
 
@@ -24,7 +25,7 @@ namespace fp {
 
 	void splash::update(float time) {
 		if (clk.getElapsedTime().asSeconds() > SPLASH_TIME) {
-			//call main menu state
+			dR->sM.stateToStack(sRef(new menu(dR)),true); 
 		}
 	}
 	void splash::draw(float time) {

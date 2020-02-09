@@ -5,9 +5,9 @@
 #include "mainLoop.hpp"
 
 namespace fp {
-	class splash : public state{
+	class menu : public state {
 	public:
-		splash(dataRef d);
+		menu(dataRef d);
 		void init();
 		void pause();
 		void resume();
@@ -16,7 +16,9 @@ namespace fp {
 		void draw(float time);
 	private:
 		dataRef dR;
-		sf::Clock clk;
-		sf::Sprite spr;
+
+		sf::Sprite title;
+		sf::Sprite playBtn;
+		sf::Sprite bkgnd;
 	};
 }
