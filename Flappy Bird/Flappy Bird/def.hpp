@@ -17,3 +17,4 @@
 
 #define PIPE_SPAWN_FQ 2.0f
 #define PIPE_SPEED 200.0f
+#define MAX_PIPE_MOVEMENT 61

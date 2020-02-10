@@ -2,6 +2,8 @@
 #include "def.hpp"
 #include <iostream>
 #include <iterator>
+#include <time.h>
+#include <stdlib.h>
 namespace fp {
 	pipe::pipe(dataRef d) : dR(d){
 		groundHeight = dR->aM.getTexture("ground").getSize().y;
@@ -14,13 +16,14 @@ namespace fp {
 	}
 	void pipe::spawnDw() {
 		sf::Sprite dwSpr(dR->aM.getTexture("pipe dw"));
-		dwSpr.setPosition(dR->wnd.getSize().x, dR->wnd.getSize().y - dwSpr.getGlobalBounds().height-pipeYOffset);
+		dwSpr.setPosition(dR->wnd.getSize().x, dR->wnd.getSize().y - dwSpr.getGlobalBounds().height/2-groundHeight-pipeYOffset);
 		pipesSpr.push_back(dwSpr);
 	}
 	void pipe::spawnUp(){
 		sf::Sprite upSpr(dR->aM.getTexture("pipe up"));
-		upSpr.setPosition(dR->wnd.getSize().x, -pipeYOffset);
+		upSpr.setPosition(dR->wnd.getSize().x, -upSpr.getGlobalBounds().height/2-pipeYOffset);
 		pipesSpr.push_back(upSpr);
+		//std::cout << -pipeYOffset << std::endl; for testing purpose only
 	}
 	void pipe::spawnScorePipe(){
 		sf::Sprite scoreSpr(dR->aM.getTexture("pipe score"));
@@ -41,6 +44,15 @@ namespace fp {
 	}
 
 	void pipe::randPipe() {
-		pipeYOffset = rand() % (groundHeight + 1);
+		srand(time(NULL)*10);
+		pipeYOffset = rand() % (groundHeight + MAX_PIPE_MOVEMENT);
+		switch (rand() % 2) {
+		case 0:
+			pipeYOffset = -pipeYOffset;
+			break;
+		case 1:
+			pipeYOffset = pipeYOffset;
+			break;
+		}
 	}
 }

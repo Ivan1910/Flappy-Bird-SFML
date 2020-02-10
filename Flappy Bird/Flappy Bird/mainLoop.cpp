@@ -1,5 +1,6 @@
 #include "mainLoop.hpp"
 #include "splash.hpp"
+
 namespace fp {
 	game::game(int width, int height, std::string name) {
 		d->wnd.create(sf::VideoMode(width, height), name,sf::Style::Close | sf::Style::Titlebar);
