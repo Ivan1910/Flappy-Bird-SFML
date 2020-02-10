@@ -12,7 +12,6 @@ namespace fp {
 		dR->aM.loadTexture("game background", GAME_BACKGROUND_PATH);
 		dR->aM.loadTexture("pipe up",PIPE_UP_PATH);
 		dR->aM.loadTexture("pipe dw", PIPE_DW_PATH);
-		dR->aM.loadTexture("pipe score", PIPE_SCORE_PATH);
 		dR->aM.loadTexture("ground", GROUND_PATH);
 		pp = std::unique_ptr<pipe>(new pipe(dR));
 		gndP = std::unique_ptr<ground>(new ground(dR));
