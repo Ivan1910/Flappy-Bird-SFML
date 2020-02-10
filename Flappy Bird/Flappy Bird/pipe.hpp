@@ -11,7 +11,6 @@ namespace fp{
 		void drawP();
 		void spawnUp();
 		void spawnDw();
-		void spawnScorePipe();
 		void movement(float t);
 		void randPipe();
 	private:

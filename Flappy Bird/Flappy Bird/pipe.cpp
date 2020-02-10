@@ -25,22 +25,19 @@ namespace fp {
 		pipesSpr.push_back(upSpr);
 		//std::cout << -pipeYOffset << std::endl; for testing purpose only
 	}
-	void pipe::spawnScorePipe(){
-		sf::Sprite scoreSpr(dR->aM.getTexture("pipe score"));
-		scoreSpr.setPosition(dR->wnd.getSize().x, dR->wnd.getSize().y - scoreSpr.getGlobalBounds().height);
-		scoreSpr.setColor(sf::Color(0, 0, 0, 0));
-		pipesSpr.push_back(scoreSpr);
-	}
-	void pipe::movement(float t){
+	void pipe::movement(float t) {
 		for (auto &spr : pipesSpr) {
 			if (spr.getPosition().x < 0 - spr.getGlobalBounds().width) {
-		    pipesSpr.erase(pipesSpr.begin());
+				pipesSpr.erase(pipesSpr.begin());
 			}
-			else {
+		}
+		for (auto &spr : pipesSpr) {
+			if (!(spr.getPosition().x < 0 - spr.getGlobalBounds().width)) {
 				float m = PIPE_SPEED * t;
 				spr.move(-m, 0);
 			}
-				}
+
+		}
 	}
 
 	void pipe::randPipe() {

@@ -34,7 +34,6 @@ namespace fp {
 		gndP->movement(time);
 		if (clk.getElapsedTime().asSeconds() > PIPE_SPAWN_FQ) {
 			pp->randPipe();
-			pp->spawnScorePipe();
 			pp->spawnDw();
 			pp->spawnUp();
 			clk.restart();
