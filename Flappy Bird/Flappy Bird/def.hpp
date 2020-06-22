@@ -5,6 +5,15 @@
 #define Player_F3 "../Resources/f3.png"
 #define Player_F4 "../Resources/f4.png"
 
+#define STATE_STILL 1
+#define STATE_FALL 2
+#define STATE_FLY 3
+#define GRAVITY 350.0f
+#define FLY_SPEED 350.0f
+#define FLY_DURATION 0.25f
+
+#define BIRD_ANIM 0.8f
+
 #define SCREEN_WIDTH 450
 #define SCREEN_HEIGHT 600
 

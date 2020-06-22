@@ -10,7 +10,7 @@ namespace fp {
 	void gameScreen::init() {
 
 		dR->aM.loadTexture("game background", GAME_BACKGROUND_PATH);
-		dR->aM.loadTexture("pipe up",PIPE_UP_PATH);
+		dR->aM.loadTexture("pipe up", PIPE_UP_PATH);
 		dR->aM.loadTexture("pipe dw", PIPE_DW_PATH);
 		dR->aM.loadTexture("ground", GROUND_PATH);
 		dR->aM.loadTexture("bf1", Player_F1);
@@ -21,7 +21,7 @@ namespace fp {
 		gndP = std::unique_ptr<ground>(new ground(dR));
 		bird = std::unique_ptr<Player>(new Player(dR));
 		gbkgnd.setTexture(this->dR->aM.getTexture("game background"));
-		
+
 	}
 
 	void gameScreen::inputHandler() {
@@ -30,7 +30,10 @@ namespace fp {
 			if (sf::Event::Closed == e.type) {
 				dR->wnd.close();
 			}
-	
+			if (this->dR->iM.spriteClicked(this->gbkgnd, sf::Mouse::Left, this->dR->wnd))
+			{
+				bird->Flap();
+			}
 		}
 	}
 
@@ -43,6 +46,8 @@ namespace fp {
 			pp->spawnUp();
 			clk.restart();
 		}
+		bird->Animation(time);
+		bird->Update(time);
 	}
 	void gameScreen::draw(float time) {
 		dR->wnd.clear();
