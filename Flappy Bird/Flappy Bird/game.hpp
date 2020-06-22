@@ -2,9 +2,12 @@
 
 #include <SFML/Graphics.hpp>
 #include "states.hpp"
+#include "player.hpp"
 #include "mainLoop.hpp"
-#include "pipe.hpp"
 #include "ground.hpp"
+#include "pipe.hpp"
+
+
 
 namespace fp {
 	class gameScreen : public state {
@@ -21,6 +24,7 @@ namespace fp {
 		sf::Sprite gbkgnd;
 		std::unique_ptr<pipe> pp;
 		std::unique_ptr<ground> gndP;
+		std::unique_ptr<Player> bird;
 		sf::Clock clk;
 	};
 }

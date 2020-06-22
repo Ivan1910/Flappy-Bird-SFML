@@ -13,9 +13,15 @@ namespace fp {
 		dR->aM.loadTexture("pipe up",PIPE_UP_PATH);
 		dR->aM.loadTexture("pipe dw", PIPE_DW_PATH);
 		dR->aM.loadTexture("ground", GROUND_PATH);
+		dR->aM.loadTexture("bf1", Player_F1);
+		dR->aM.loadTexture("bf2", Player_F2);
+		dR->aM.loadTexture("bf3", Player_F3);
+		dR->aM.loadTexture("bf4", Player_F4);
 		pp = std::unique_ptr<pipe>(new pipe(dR));
 		gndP = std::unique_ptr<ground>(new ground(dR));
+		bird = std::unique_ptr<Player>(new Player(dR));
 		gbkgnd.setTexture(this->dR->aM.getTexture("game background"));
+		
 	}
 
 	void gameScreen::inputHandler() {
@@ -43,6 +49,7 @@ namespace fp {
 		dR->wnd.draw(gbkgnd);
 		pp->drawP();
 		gndP->drawG();
+		bird->Draw();
 		dR->wnd.display();
 	}
 	void gameScreen::resume() {}

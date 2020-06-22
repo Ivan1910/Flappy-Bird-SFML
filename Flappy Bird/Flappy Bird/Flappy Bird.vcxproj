@@ -27,6 +27,7 @@
     <ClCompile Include="mainLoop.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="pipe.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="splash.cpp" />
     <ClCompile Include="stateMachine.cpp" />
   </ItemGroup>
@@ -39,6 +40,7 @@
     <ClInclude Include="mainLoop.hpp" />
     <ClInclude Include="menu.hpp" />
     <ClInclude Include="pipe.hpp" />
+    <ClInclude Include="player.hpp" />
     <ClInclude Include="splash.hpp" />
     <ClInclude Include="stateMachine.hpp" />
     <ClInclude Include="states.hpp" />
