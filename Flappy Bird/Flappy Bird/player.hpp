@@ -13,6 +13,7 @@ namespace fp {
 		void Animation(float deltaT);
 		void Flap();
 		void Update(float deltaT);
+		const sf::Sprite &GetSprite() const;
 	private:
 		dataRef dR;
 		sf::Clock clk;

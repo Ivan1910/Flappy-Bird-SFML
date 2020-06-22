@@ -1,5 +1,10 @@
 #pragma once
 
+#define CLICK_FQ 0.08f
+
+#define PIPE_DISTANCE 20
+#define MAX_PIPE_MOVEMENT 30
+
 #define Player_F1 "../Resources/f1.png"
 #define Player_F2 "../Resources/f2.png"
 #define Player_F3 "../Resources/f3.png"
@@ -8,9 +13,9 @@
 #define STATE_STILL 1
 #define STATE_FALL 2
 #define STATE_FLY 3
-#define GRAVITY 350.0f
-#define FLY_SPEED 350.0f
-#define FLY_DURATION 0.25f
+#define GRAVITY 250.0f
+#define FLY_SPEED 250.0f
+#define FLY_DURATION 0.35f
 
 #define BIRD_ANIM 0.8f
 
@@ -21,7 +26,6 @@
 
 #define PIPE_SPAWN_FQ 2.0f
 #define PIPE_SPEED 200.0f
-#define MAX_PIPE_MOVEMENT 61
 
 #define TITLE_PATH "../Resources/flappybird.png"
 #define PLAYBTN_PATH "../Resources/play.png"
@@ -31,3 +35,9 @@
 #define PIPE_UP_PATH "../Resources/dwpipe.png"
 #define PIPE_DW_PATH "../Resources/uppipe.png"
 #define GROUND_PATH "../Resources/ground.png"
+
+enum gameStates {
+	ePreGameState,
+	eGameState,
+	eGameOverState
+};

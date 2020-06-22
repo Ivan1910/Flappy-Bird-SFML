@@ -13,6 +13,7 @@ namespace fp{
 		void spawnDw();
 		void movement(float t);
 		void randPipe();
+		const std::vector<sf::Sprite> &GetSprites() const;
 	private:
 		dataRef dR;
 		std::vector<sf::Sprite> pipesSpr;

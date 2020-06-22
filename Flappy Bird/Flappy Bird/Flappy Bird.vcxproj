@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="assetManager.cpp" />
+    <ClCompile Include="collision.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="ground.cpp" />
     <ClCompile Include="inputManager.cpp" />
@@ -33,6 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="assetManager.hpp" />
+    <ClInclude Include="collision.hpp" />
     <ClInclude Include="def.hpp" />
     <ClInclude Include="game.hpp" />
     <ClInclude Include="ground.hpp" />

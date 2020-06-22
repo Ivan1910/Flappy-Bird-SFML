@@ -49,4 +49,8 @@ namespace fp {
 		birdState = STATE_FLY;
 	}
 
+	const sf::Sprite &Player::GetSprite() const {
+		return birdSpr;
+	}
+
 }

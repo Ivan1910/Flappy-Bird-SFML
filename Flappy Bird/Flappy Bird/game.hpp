@@ -6,6 +6,7 @@
 #include "mainLoop.hpp"
 #include "ground.hpp"
 #include "pipe.hpp"
+#include "collision.hpp"
 
 
 
@@ -26,5 +27,8 @@ namespace fp {
 		std::unique_ptr<ground> gndP;
 		std::unique_ptr<Player> bird;
 		sf::Clock clk;
+		Collision coll;
+		int gameState;
+	    sf::Clock clickTimer;
 	};
 }

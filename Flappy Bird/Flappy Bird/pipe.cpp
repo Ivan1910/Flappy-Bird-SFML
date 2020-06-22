@@ -16,14 +16,14 @@ namespace fp {
 	}
 	void pipe::spawnDw() {
 		sf::Sprite dwSpr(dR->aM.getTexture("pipe dw"));
-		dwSpr.setPosition(dR->wnd.getSize().x, dR->wnd.getSize().y - dwSpr.getGlobalBounds().height/2-groundHeight-pipeYOffset);
+		dwSpr.setPosition(dR->wnd.getSize().x, dR->wnd.getSize().y - dwSpr.getGlobalBounds().height/2-groundHeight-pipeYOffset+PIPE_DISTANCE);
 		pipesSpr.push_back(dwSpr);
 	}
 	void pipe::spawnUp(){
 		sf::Sprite upSpr(dR->aM.getTexture("pipe up"));
-		upSpr.setPosition(dR->wnd.getSize().x, -upSpr.getGlobalBounds().height/2-pipeYOffset);
+		upSpr.setPosition(dR->wnd.getSize().x, -upSpr.getGlobalBounds().height/2-pipeYOffset-PIPE_DISTANCE);
 		pipesSpr.push_back(upSpr);
-		//std::cout << -pipeYOffset << std::endl; for testing purpose only
+		std::cout << -pipeYOffset << std::endl; //for testing purpose only
 	}
 	void pipe::movement(float t) {
 		for (auto &spr : pipesSpr) {
@@ -51,5 +51,10 @@ namespace fp {
 			pipeYOffset = pipeYOffset;
 			break;
 		}
+	}
+
+	const std::vector<sf::Sprite> &pipe::GetSprites() const
+	{
+		return pipesSpr;
 	}
 }

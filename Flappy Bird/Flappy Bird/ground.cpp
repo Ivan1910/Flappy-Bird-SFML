@@ -28,4 +28,9 @@ namespace fp {
 			dR->wnd.draw(spr);
 		}
 	}
+
+	const std::vector<sf::Sprite> &ground::GetSprites() const {
+		return gnd;
+	}
+
 }
