@@ -27,5 +27,6 @@ namespace fp
 		sf::Sprite title;
 		sf::Sprite newgame;
 		sf::Sprite bckgrd;
+		sf::Sprite medal;
 	};
 }

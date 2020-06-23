@@ -12,6 +12,16 @@
 #define GAME_OVER_BKGND "../Resources/bkgnd.png"
 #define RESTART_BUTTON "../Resources/play.png"
 
+#define GOLD "../Resources/gold.png"
+#define BRONZE "../Resources/bronze.png"
+#define SILVER "../Resources/silver.png"
+#define PLATINUM "../Resources/platinum.png"
+
+#define BRONZESCORE 0
+#define SILVERSCORE 2
+#define GOLDSCORE 50
+#define PLATINUMSCORE 100
+
 #define SCORE_SIZE 60
 #define SCORE_POINT_WIDTH 15
 
