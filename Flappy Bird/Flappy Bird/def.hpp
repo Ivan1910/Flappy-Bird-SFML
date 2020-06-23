@@ -1,14 +1,20 @@
 #pragma once
 
-#define CLICK_FQ 0.08f
+#define CLICK_FQ 0.15f
 
 #define PIPE_DISTANCE 20
 #define MAX_PIPE_MOVEMENT 30
+
+#define SCORE_SIZE 60
+#define SCORE_POINT_WIDTH 15
 
 #define Player_F1 "../Resources/f1.png"
 #define Player_F2 "../Resources/f2.png"
 #define Player_F3 "../Resources/f3.png"
 #define Player_F4 "../Resources/f4.png"
+
+#define ScorePoint "../Resources/scorePoint.png"
+#define FP_FONT "../Resources/FlappyFont.ttf"
 
 #define STATE_STILL 1
 #define STATE_FALL 2

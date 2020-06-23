@@ -13,6 +13,15 @@ namespace fp {
 		for(auto const& spr : pipesSpr) {
 			dR->wnd.draw(spr);
 		}
+		for (auto const& spr : scoringPointSpr) {
+			dR->wnd.draw(spr);
+		}
+	}
+	void pipe::spawnScorePoint() {
+		sf::Sprite scorePoint(dR->aM.getTexture("score point"));
+		scorePoint.setPosition(dR->wnd.getSize().x+SCORE_POINT_WIDTH, dR->wnd.getSize().y - scorePoint.getGlobalBounds().height);
+		scoringPointSpr.push_back(scorePoint);
+		std::rotate(scoringPointSpr.rbegin(), scoringPointSpr.rbegin() + 1, scoringPointSpr.rend());
 	}
 	void pipe::spawnDw() {
 		sf::Sprite dwSpr(dR->aM.getTexture("pipe dw"));
@@ -38,6 +47,13 @@ namespace fp {
 			}
 
 		}
+		for (auto &spr : scoringPointSpr) {
+			if (!(spr.getPosition().x < 0 - spr.getGlobalBounds().width)) {
+				float m = PIPE_SPEED * t;
+				spr.move(-m, 0);
+			}
+
+		}
 	}
 
 	void pipe::randPipe() {
@@ -55,6 +71,12 @@ namespace fp {
 
 	const std::vector<sf::Sprite> &pipe::GetSprites() const
 	{
-		return pipesSpr;
+			return pipesSpr;
 	}
+
+	std::vector<sf::Sprite>& pipe::GetScoringSprites()
+	{
+		return scoringPointSpr;
+	}
+	
 }

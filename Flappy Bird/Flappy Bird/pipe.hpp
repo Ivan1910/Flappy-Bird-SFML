@@ -13,10 +13,13 @@ namespace fp{
 		void spawnDw();
 		void movement(float t);
 		void randPipe();
+		void spawnScorePoint();
 		const std::vector<sf::Sprite> &GetSprites() const;
+		std::vector<sf::Sprite> &GetScoringSprites();
 	private:
 		dataRef dR;
 		std::vector<sf::Sprite> pipesSpr;
+		std::vector<sf::Sprite> scoringPointSpr;
 		int groundHeight;
 		int pipeYOffset;
 	};

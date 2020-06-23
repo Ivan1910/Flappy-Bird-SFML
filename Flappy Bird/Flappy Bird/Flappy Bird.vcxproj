@@ -23,6 +23,7 @@
     <ClCompile Include="collision.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="ground.cpp" />
+    <ClCompile Include="hud.cpp" />
     <ClCompile Include="inputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainLoop.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="def.hpp" />
     <ClInclude Include="game.hpp" />
     <ClInclude Include="ground.hpp" />
+    <ClInclude Include="hud.hpp" />
     <ClInclude Include="inputManager.hpp" />
     <ClInclude Include="mainLoop.hpp" />
     <ClInclude Include="menu.hpp" />

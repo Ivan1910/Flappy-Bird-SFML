@@ -6,6 +6,7 @@
 #include "mainLoop.hpp"
 #include "ground.hpp"
 #include "pipe.hpp"
+#include "hud.hpp"
 #include "collision.hpp"
 
 
@@ -15,14 +16,15 @@ namespace fp {
 	public:
 		gameScreen(dataRef d);
 		void init();
-		void pause();
 		void resume();
+		void pause();
 		void inputHandler();
 		void update(float time);
 		void draw(float time);
 	private:
 		dataRef dR;
-		sf::Sprite gbkgnd;
+		sf::Sprite gbkgnd;	
+		std::unique_ptr<HUD> hud;
 		std::unique_ptr<pipe> pp;
 		std::unique_ptr<ground> gndP;
 		std::unique_ptr<Player> bird;
@@ -30,5 +32,6 @@ namespace fp {
 		Collision coll;
 		int gameState;
 	    sf::Clock clickTimer;
+		int scoreCounter = 0;
 	};
 }

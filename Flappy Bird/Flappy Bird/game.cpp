@@ -17,12 +17,18 @@ namespace fp {
 		dR->aM.loadTexture("bf2", Player_F2);
 		dR->aM.loadTexture("bf3", Player_F3);
 		dR->aM.loadTexture("bf4", Player_F4);
+		dR->aM.loadTexture("score point", ScorePoint);
+		dR->aM.loadFont("fp font", FP_FONT);
+
+		hud = std::unique_ptr<HUD>(new HUD(dR));
 		pp = std::unique_ptr<pipe>(new pipe(dR));
 		gndP = std::unique_ptr<ground>(new ground(dR));
 		bird = std::unique_ptr<Player>(new Player(dR));
 		gbkgnd.setTexture(this->dR->aM.getTexture("game background"));
 		gameState = ePreGameState;
 	}
+	void gameScreen::resume() {}
+	void gameScreen::pause() {}
 
 	void gameScreen::inputHandler() {
 		sf::Event e;
@@ -52,6 +58,7 @@ namespace fp {
 				pp->randPipe();
 				pp->spawnDw();
 				pp->spawnUp();
+				pp->spawnScorePoint();
 				clk.restart();
 			}
 			bird->Update(time);
@@ -72,6 +79,18 @@ namespace fp {
 					gameState = eGameOverState;
 				}
 			}
+			if (gameState == eGameState) {
+				std::vector<sf::Sprite> &scoringPipeSpr = pp->GetScoringSprites();
+				for (int i = 0; i < scoringPipeSpr.size(); i++)
+				{
+					if (coll.spriteCollision(bird->GetSprite(), scoringPipeSpr.at(i)))
+					{
+						++scoreCounter;
+						hud->ScoreUpdate(scoreCounter);
+				     	scoringPipeSpr.erase(scoringPipeSpr.begin() + i);
+					}
+				}
+			}
 		}
 	}
 	void gameScreen::draw(float time) {
@@ -80,8 +99,8 @@ namespace fp {
 		pp->drawP();
 		gndP->drawG();
 		bird->Draw();
+		hud->Draw();
 		dR->wnd.display();
 	}
-	void gameScreen::resume() {}
-	void gameScreen::pause() {}
+
 }
