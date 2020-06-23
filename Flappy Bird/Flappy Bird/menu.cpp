@@ -17,7 +17,7 @@ namespace fp {
 		playBtn.setTexture(this->dR->aM.getTexture("play button"));
 		bkgnd.setTexture(this->dR->aM.getTexture("menu background"));
 		playBtn.setPosition((SCREEN_WIDTH / 2) - playBtn.getGlobalBounds().width / 2, (SCREEN_HEIGHT / 2) - playBtn.getGlobalBounds().height / 2);
-		title.setPosition((SCREEN_WIDTH/2)-title.getGlobalBounds().width/2,title.getGlobalBounds().height/2);
+		title.setPosition((SCREEN_WIDTH/2)-title.getGlobalBounds().width/2,dR->wnd.getSize().y/4);
 	}
 
 	void menu::inputHandler() {

@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="assetManager.cpp" />
     <ClCompile Include="collision.cpp" />
+    <ClCompile Include="endGameState.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="ground.cpp" />
     <ClCompile Include="hud.cpp" />
@@ -37,6 +38,7 @@
     <ClInclude Include="assetManager.hpp" />
     <ClInclude Include="collision.hpp" />
     <ClInclude Include="def.hpp" />
+    <ClInclude Include="endGameState.hpp" />
     <ClInclude Include="game.hpp" />
     <ClInclude Include="ground.hpp" />
     <ClInclude Include="hud.hpp" />

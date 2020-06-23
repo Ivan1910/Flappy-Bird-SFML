@@ -5,6 +5,11 @@
 #define PIPE_DISTANCE 20
 #define MAX_PIPE_MOVEMENT 30
 
+#define SCORE_BODY "../Resources/scorebody.png"
+#define GAME_OVER_TEXT "../Resources/gameover.png"
+#define GAME_OVER_BKGND "../Resources/bkgnd.png"
+#define RESTART_BUTTON "../Resources/play.png"
+
 #define SCORE_SIZE 60
 #define SCORE_POINT_WIDTH 15
 

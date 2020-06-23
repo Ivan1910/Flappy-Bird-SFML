@@ -2,7 +2,7 @@
 #include "def.hpp"
 #include <sstream>
 #include <iostream>
-
+#include "endGameState.hpp"
 
 namespace fp {
 	gameScreen::gameScreen(dataRef d) :dR(d) {}
@@ -90,6 +90,10 @@ namespace fp {
 				     	scoringPipeSpr.erase(scoringPipeSpr.begin() + i);
 					}
 				}
+			}
+			if (eGameOverState == gameState)
+			{
+				dR->sM.stateToStack(sRef(new GameOverState(dR)),true);
 			}
 		}
 	}
