@@ -93,7 +93,7 @@ namespace fp {
 			}
 			if (eGameOverState == gameState)
 			{
-				dR->sM.stateToStack(sRef(new GameOverState(dR)),true);
+				dR->sM.stateToStack(sRef(new GameOverState(dR,scoreCounter)),true);
 			}
 		}
 	}

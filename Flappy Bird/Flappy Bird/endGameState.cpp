@@ -8,7 +8,7 @@
 
 namespace fp
 {
-	GameOverState::GameOverState(dataRef dr) : dR(dr){}
+	GameOverState::GameOverState(dataRef dr,int score) : dR(dr),scoreC(score){}
 
 	void GameOverState::init()
 	{
@@ -25,6 +25,20 @@ namespace fp
 		scorebody.setPosition(dR->wnd.getSize().x / 2 - scorebody.getGlobalBounds().width / 2, dR->wnd.getSize().y / 2 - scorebody.getGlobalBounds().height / 2);
 		title.setPosition(dR->wnd.getSize().x / 2 - title.getGlobalBounds().width / 2,scorebody.getPosition().y-title.getGlobalBounds().height*1.2);
 		newgame.setPosition(dR->wnd.getSize().x / 2 - newgame.getGlobalBounds().width / 2,scorebody.getPosition().y+scorebody.getGlobalBounds().height+newgame.getGlobalBounds().height*0.2);
+	
+		score.setFont(dR->aM.getFont("fp font"));
+		score.setString(std::to_string(scoreC));
+		score.setCharacterSize(20);
+		score.setFillColor(sf::Color::White);
+		score.setOrigin(score.getGlobalBounds().width / 2, score.getGlobalBounds().height / 2);
+		score.setPosition(dR->wnd.getSize().x/10*7.25, dR->wnd.getSize().y / 2.15);
+
+		highscore.setFont(dR->aM.getFont("fp font"));
+		highscore.setString(std::to_string(highscoreC));
+		highscore.setCharacterSize(20);
+		highscore.setFillColor(sf::Color::White);
+		highscore.setOrigin(highscore.getGlobalBounds().width / 2, highscore.getGlobalBounds().height / 2);
+		highscore.setPosition(dR->wnd.getSize().x / 10 * 7.25, dR->wnd.getSize().y / 1.78);
 	}
 
 	void GameOverState::inputHandler()
@@ -52,6 +66,8 @@ namespace fp
 		this->dR->wnd.draw(this->title);
 		this->dR->wnd.draw(this->scorebody);
 		this->dR->wnd.draw(this->newgame);
+		this->dR->wnd.draw(this->score);
+		this->dR->wnd.draw(this->highscore);
 
 		this->dR->wnd.display();
 	}

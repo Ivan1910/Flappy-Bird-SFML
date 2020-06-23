@@ -9,7 +9,7 @@ namespace fp
 	class GameOverState : public state
 	{
 	public:
-		GameOverState(dataRef dr);
+		GameOverState(dataRef dr,int score);
         void init();
 		void inputHandler();
 		void update(float deltaT);
@@ -19,6 +19,10 @@ namespace fp
 
 	private:
 		dataRef dR;
+		int scoreC;
+	    int highscoreC;
+		sf::Text highscore;
+		sf::Text score;
 		sf::Sprite scorebody;
 		sf::Sprite title;
 		sf::Sprite newgame;
