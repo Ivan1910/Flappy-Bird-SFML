@@ -2,7 +2,7 @@
 
 #include "def.hpp"
 #include <iostream>
-#include <sstream>
+#include <fstream>
 #include "endGameState.hpp"
 #include "game.hpp"
 
@@ -12,6 +12,23 @@ namespace fp
 
 	void GameOverState::init()
 	{
+		std::ifstream readF;
+		readF.open(HIGHSCORE);
+		if (readF.is_open()) {
+			while (!readF.eof()) {
+				readF >> highscoreC;
+			}
+		}
+		readF.close();
+		std::ofstream writeF;
+		writeF.open(HIGHSCORE);
+		if (writeF.is_open()) {
+			if (scoreC > highscoreC) {
+				highscoreC = scoreC;
+			}
+			writeF << highscoreC;
+		}
+		writeF.close();
 		this->dR->aM.loadTexture("game over", GAME_OVER_BKGND);
 		this->dR->aM.loadTexture("body", SCORE_BODY);
 		this->dR->aM.loadTexture("title", GAME_OVER_TEXT);

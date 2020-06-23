@@ -5,6 +5,8 @@
 #define PIPE_DISTANCE 20
 #define MAX_PIPE_MOVEMENT 30
 
+#define HIGHSCORE "../Resources/highscore.txt"
+
 #define SCORE_BODY "../Resources/scorebody.png"
 #define GAME_OVER_TEXT "../Resources/gameover.png"
 #define GAME_OVER_BKGND "../Resources/bkgnd.png"
