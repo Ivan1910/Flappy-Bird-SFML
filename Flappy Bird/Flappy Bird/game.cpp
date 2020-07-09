@@ -36,7 +36,7 @@ namespace fp {
 			if (sf::Event::Closed == e.type) {
 				dR->wnd.close();
 			}
-			if (this->dR->iM.spriteClicked(this->gbkgnd, sf::Mouse::Left, this->dR->wnd))
+			if (this->dR->iM.spriteClicked(this->gbkgnd, sf::Mouse::Left, this->dR->wnd) || sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 			{
 				if (gameState != eGameOverState && clickTimer.getElapsedTime().asSeconds() > CLICK_FQ) {
 					clickTimer.restart();

@@ -1,6 +1,6 @@
 #pragma once
 
-#define CLICK_FQ 0.15f
+#define CLICK_FQ 0.05f
 
 #define PIPE_DISTANCE 20
 #define MAX_PIPE_MOVEMENT 30
@@ -36,9 +36,9 @@
 #define STATE_STILL 1
 #define STATE_FALL 2
 #define STATE_FLY 3
-#define GRAVITY 250.0f
-#define FLY_SPEED 250.0f
-#define FLY_DURATION 0.35f
+#define GRAVITY 350.0f
+#define FLY_SPEED 200.0f
+#define FLY_DURATION 0.25f
 
 #define BIRD_ANIM 0.8f
 
